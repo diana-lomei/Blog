@@ -10,9 +10,7 @@ let posts = [];
 
 function pluralize(value, words) {
   value = Math.abs(value);
-  if (value % 10 === 1 && value % 100 !== 11) return words[0];
-  if ([2, 3, 4].includes(value % 10) && ![12, 13, 14].includes(value % 100)) return words[1];
-  return words[2];
+  return value === 1 ? words[0] : words[1];
 }
 
 function timeAgo(date) {
@@ -22,23 +20,22 @@ function timeAgo(date) {
   let interval;
 
   interval = Math.floor(seconds / 31536000);
-  if (interval >= 1) return `${interval} ${pluralize(interval, ['рік', 'роки', 'років'])} тому`;
+  if (interval >= 1) return `${interval} ${pluralize(interval, ['year', 'years'])} ago`;
 
   interval = Math.floor(seconds / 2592000);
-  if (interval >= 1) return `${interval} ${pluralize(interval, ['місяць', 'місяці', 'місяців'])} тому`;
+  if (interval >= 1) return `${interval} ${pluralize(interval, ['month', 'months'])} ago`;
 
   interval = Math.floor(seconds / 86400);
-  if (interval >= 1) return `${interval} ${pluralize(interval, ['день', 'дні', 'днів'])} тому`;
+  if (interval >= 1) return `${interval} ${pluralize(interval, ['day', 'days'])} ago`;
 
   interval = Math.floor(seconds / 3600);
-  if (interval >= 1) return `${interval} ${pluralize(interval, ['годину', 'години', 'годин'])} тому`;
+  if (interval >= 1) return `${interval} ${pluralize(interval, ['hour', 'hours'])} ago`;
 
   interval = Math.floor(seconds / 60);
-  if (interval >= 1) return `${interval} ${pluralize(interval, ['хвилину', 'хвилини', 'хвилин'])} тому`;
+  if (interval >= 1) return `${interval} ${pluralize(interval, ['minute', 'minutes'])} ago`;
 
-  return "щойно";
+  return "just now";
 }
-
 
 app.get('/', (req, res) => {
   res.render("home", { posts, timeAgo });
