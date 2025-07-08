@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+desktop.ini      # Windows
+
+# VS Code settings (можна залишити, якщо хочеш поділитись конфігом)
+.vscode/
+
+# Build output (якщо коли-небудь додаси фронтенд-збірку)
+dist/
+build/
+
+# Optional npm cache directory
+.npm/
+
+# IDE-specific (можеш прибрати або залишити, якщо не працюєш в WebStorm/JetBrains)
+.idea/
+
+# Temp files
+*.swp
+*.swo
+*.tmp
+
+# Logs from pm2 or other process managers
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage / testing
+coverage/
+
+# Local database (якщо буде)
+*.sqlite
+*.db
+
+# Render deploy output
+render.yaml

@@ -1,0 +1,34 @@
+<%- include("partials/header") %>
+<h2>All Posts</h2>
+
+<% if (posts.length > 0) { %>
+  <div class="lengthpost">
+    <p>You have <%= posts.length %> posts</p>
+  </div>
+<% } %>
+
+<% if (posts.length === 0) { %>
+  <div class="no-posts">
+    <p>No posts yet.</p>
+    <a href="/new" class="create-link">Create one!</a>
+  </div>
+<% } else { %>
+
+  <% posts.forEach((post, index) => { %>
+    <article class="post">
+      <h3><%= post.title %></h3>
+      <p><%= post.content %></p>
+      
+   <small class="post-time"><%= timeAgo(new Date(post.timestamp)) %></small>
+
+
+      <a href="/edit/<%= index %>">Edit</a>
+
+      <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+        <button type="submit" onclick="return confirm('Delete this post?')">Delete</button>
+      </form>
+    </article>
+  <% }) %>
+<% } %>
+
+<%- include("partials/footer") %>

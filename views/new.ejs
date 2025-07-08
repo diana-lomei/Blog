@@ -1,0 +1,13 @@
+<%- include("partials/header") %>
+<h2>New Post</h2>
+
+<div class="form-wrapper">
+<form action="/new" method="POST">
+  <input type="text" name="title" placeholder="Title" required />
+  <textarea name="content" placeholder="Content" rows="8" required></textarea>
+  <button type="submit">Publish</button>
+</form>
+</div>
+<%- include("partials/footer") %>
+
+
