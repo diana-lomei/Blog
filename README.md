@@ -11,10 +11,10 @@ Simple blog built with **Node.js**, **Express**, and **EJS**.
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](./home.png)
+![Home Page](/home.png)
 
 ### 🆕 New Post Form
-![New Post](./new-post.png)
+![New Post](/new-post.png)
 
 
 ## Run locally
