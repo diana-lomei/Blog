@@ -8,6 +8,15 @@ Simple blog built with **Node.js**, **Express**, and **EJS**.
 - Styled with custom CSS
 - Responsive layout
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](./home.png)
+
+### 🆕 New Post Form
+![New Post](./new-post.png)
+
+
 ## Run locally
 ```bash
 git clone https://github.com/diana-lomei/Blog.git
